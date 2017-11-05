@@ -1,0 +1,45 @@
+@echo Welcome To NANO System
+@echo Loading
+:STOM
+@cls
+@echo ---%time%---%date%---Nano System~Activated
+@echo 5.Text Editor
+@echo 4.Go To Web
+@echo 3.Settings
+@echo 2.File Explorer
+@echo 1.Search The Web
+@echo ------------------------------
+@echo Enter Your Choice
+@CHOICE /C 12345 /M "Enter your choice:"
+@IF ERRORLEVEL 5 GOTO TXT
+@IF ERRORLEVEL 4 GOTO WEBURL
+@IF ERRORLEVEL 3 GOTO SETT
+@IF ERRORLEVEL 2 GOTO FE
+@IF ERRORLEVEL 1 GOTO WEBSEA
+:TXT
+@EDIT
+@pause
+@goto STOM
+:SETT
+@COLOR ZG
+@SET /P COLOR=ENTER COLOR:
+@COLOR %COLOR%
+@pause
+@goto STOM
+:WEBURL
+@SET /P URL=URL:
+@START %URL%
+@pause
+@goto STOM
+:FE
+@CD 
+@DIR
+@SET /P PATH=ENTER PATH:
+@CD %PATH%
+@DIR
+@goto STOM
+:WEBSEA
+@SET /P WORD=ENTER KEYWORDS:
+@start https://www.bing.com/search?q=%WORD%
+@pause
+@goto STOM
